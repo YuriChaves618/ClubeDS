@@ -1,0 +1,33 @@
+.rules__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.rule-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 24px 24px 22px;
+}
+
+.rule-card svg {
+  color: var(--accent);
+}
+
+.rule-card h3 {
+  font-size: 17px;
+  margin-top: 16px;
+}
+
+.rule-card p {
+  margin-top: 10px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .rules__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,116 @@
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq__item {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq__item.is-open {
+  border-color: var(--accent-border);
+}
+
+.faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 20px 24px;
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+}
+
+.faq__chevron {
+  flex-shrink: 0;
+  color: var(--accent);
+  transition: transform 0.25s ease;
+}
+
+.faq__item.is-open .faq__chevron {
+  transform: rotate(180deg);
+}
+
+.faq__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.faq__answer p {
+  overflow: hidden;
+  min-height: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  padding: 0 24px;
+}
+
+.faq__item.is-open .faq__answer {
+  grid-template-rows: 1fr;
+}
+
+.faq__item.is-open .faq__answer p {
+  padding: 0 24px 22px;
+}
+
+.faq__closing {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  background: linear-gradient(120deg, var(--bg-raised-2), var(--bg-raised));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 26px 28px;
+}
+
+.faq__closing h3 {
+  font-size: 18px;
+}
+
+.faq__closing p {
+  margin-top: 6px;
+  font-size: 14px;
+  max-width: 440px;
+}
+
+.faq__closing-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fff;
+  font-weight: 600;
+  font-size: 14.5px;
+  text-decoration: none;
+  box-shadow: 0 10px 26px -10px rgba(242, 116, 10, 0.75);
+  transition: transform 0.15s ease;
+}
+
+.faq__closing-btn:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .faq__closing {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
